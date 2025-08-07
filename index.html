@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GlowCare AI - Skin Analyzer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(270deg, #fce4ec, #f8bbd0, #fce4ec);
+      background-size: 600% 600%;
+      animation: gradient 15s ease infinite;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background-color: #ffffffcc;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .form-section {
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .form-section h1 {
+      color: #d81b60;
+      margin-bottom: 10px;
+    }
+
+    .form-section p {
+      color: #555;
+    }
+
+    input[type="file"] {
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #d81b60;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #ad1457;
+    }
+
+    .animation img {
+      max-width: 250px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="animation">
+      <img src="{{ url_for('static', filename='img/girl.gif') }}" alt="Animated Girl">
+    </div>
+    <div class="form-section">
+      <h1>🌸 GlowCare AI</h1>
+      <p>Upload your selfie to analyze your skin</p>
+      <form action="/analyze" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required><br>
+        <button type="submit">Analyze Skin</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

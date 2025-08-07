@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GlowCare AI - Your Skin Report</title>
+    <style>
+        body {
+            background: linear-gradient(270deg, #fce4ec, #f8bbd0, #fce4ec);
+            background-size: 600% 600%;
+            animation: gradient 8s ease infinite;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a148c;
+            padding: 30px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            max-width: 300px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            background-color: #fff0f5;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ad1457;
+            border-bottom: 2px solid #f8bbd0;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Skin Analysis Report</h1>
+
+    <img src="{{ image_path }}" alt="Uploaded Skin Image">
+
+    <div class="section">
+        <h2>🧬 Skin Type:</h2>
+        <p>{{ result.skin_type }}</p>
+    </div>
+
+    <div class="section">
+        <h2>🧴 Recommendations:</h2>
+        <p>{{ result.recommendations }}</p>
+    </div>
+
+    <div class="section">
+        <h2>🥗 What to Eat:</h2>
+        <p>{{ result.what_to_eat }}</p>
+    </div>
+
+    <div class="section">
+        <h2>🚫 What to Avoid:</h2>
+        <p>{{ result.what_to_avoid }}</p>
+    </div>
+
+    <div class="section">
+        <h2>🛍️ Products to Use:</h2>
+        <p>{{ result.products }}</p>
+    </div>
+
+    <div class="section">
+        <h2>🏠 Home Remedies:</h2>
+        <p>{{ result.home_remedies }}</p>
+    </div>
+
+    <div class="section">
+        <h2>🔬 Ingredients to Use:</h2>
+        <p>{{ result.ingredients_to_use }}</p>
+    </div>
+
+    <div class="section">
+        <h2>⚠️ Ingredients to Avoid:</h2>
+        <p>{{ result.ingredients_to_avoid }}</p>
+    </div>
+</body>
+</html>
